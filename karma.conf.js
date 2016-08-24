@@ -20,6 +20,7 @@ module.exports = function init(config) {
     frameworks: ['tap'],
     files: [
       './node_modules/babel-polyfill/dist/polyfill.min.js',
+      './Testing/ImageCaptureHelper.js',
       'Sources/**/test/*.js',
     ],
 
@@ -61,7 +62,26 @@ module.exports = function init(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS-image'],
     singleRun: true,
+
+    client: {
+      useIframe: false,
+    },
+
+    customLaunchers: {
+      'PhantomJS-image': {
+        base: 'PhantomJS',
+        options: {
+          onCallback: function (data) {
+            if (data.type === 'render' && data.fname !== undefined) {
+              /* global page */
+              page.render(data.fname);
+            }
+          },
+        },
+        flags: ['--load-images=true'],
+      },
+    },
   });
 };
