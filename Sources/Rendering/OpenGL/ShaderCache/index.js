@@ -38,11 +38,12 @@ function vtkShaderCache(publicAPI, model) {
 
     nFSSource = vtkShaderProgram.substitute(nFSSource, '//VTK::System::Dec', [
       `${version}\n#extension GL_OES_standard_derivatives : enable\n`,
-      '#ifdef GL_FRAGMENT_PRECISION_HIGH',
+      // '#ifdef GL_FRAGMENT_PRECISION_HIGH',
       'precision highp float;',
-      '#else',
-      'precision mediump float;',
-      '#endif',
+      'precision highp int;',
+      // '#else',
+      // 'precision mediump float;',
+      // '#endif',
     ]).result;
 
     // nFSSource = ShaderProgram.substitute(nFSSource, 'gl_FragData\\[0\\]',

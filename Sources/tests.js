@@ -12,3 +12,4 @@ import './Rendering/OpenGL/PolyDataMapper/test/testInterpolateScalarsBeforeMappi
 import './Testing/testAlgorithm';
 import './Testing/testMacro';
 import './Testing/testSerialization';
+import './Rendering/OpenGL/SphereMapper/test/testSphere';
