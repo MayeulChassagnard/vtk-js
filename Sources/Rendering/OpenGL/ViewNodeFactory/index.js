@@ -3,6 +3,7 @@ import vtkViewNodeFactory from '../../SceneGraph/ViewNodeFactory';
 import vtkOpenGLActor from '../Actor';
 import vtkOpenGLActor2D from '../Actor2D';
 import vtkOpenGLCamera from '../Camera';
+import vtkOpenGLStickMapper from '../StickMapper';
 import vtkOpenGLImageMapper from '../ImageMapper';
 import vtkOpenGLImageSlice from '../ImageSlice';
 import vtkOpenGLPolyDataMapper from '../PolyDataMapper';
@@ -42,6 +43,7 @@ export function extend(publicAPI, model, initialValues = {}) {
   publicAPI.registerOverride('vtkActor', vtkOpenGLActor.newInstance);
   publicAPI.registerOverride('vtkActor2D', vtkOpenGLActor2D.newInstance);
   publicAPI.registerOverride('vtkCamera', vtkOpenGLCamera.newInstance);
+  publicAPI.registerOverride('vtkStickMapper', vtkOpenGLStickMapper.newInstance);
   publicAPI.registerOverride('vtkImageMapper', vtkOpenGLImageMapper.newInstance);
   publicAPI.registerOverride('vtkImageSlice', vtkOpenGLImageSlice.newInstance);
   publicAPI.registerOverride('vtkMapper', vtkOpenGLPolyDataMapper.newInstance);
