@@ -25,8 +25,8 @@ export function extend(publicAPI, model, initialValues = {}) {
   vtkMapper.extend(publicAPI, model, initialValues);
 
   macro.setGet(publicAPI, model, [
-    'scaleArray',
     'radius',
+    'scaleArray',
   ]);
 
   // Object methods
